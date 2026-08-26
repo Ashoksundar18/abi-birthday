@@ -36,7 +36,7 @@ export default function Navbar() {
             <Heart className="w-4 h-4 fill-white/80" />
           </div>
           <span className="font-heading font-semibold text-lg tracking-tight text-white/90 group-hover:text-purple-200 transition-colors">
-            For {friendData.name} <span className="text-purple-400 font-normal text-sm">✨</span>
+            A Special Journey <span className="text-purple-400 font-normal text-sm">✨</span>
           </span>
         </a>
 
