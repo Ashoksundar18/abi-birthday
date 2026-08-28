@@ -18,7 +18,7 @@ export default function PersonalLetter() {
             transition={{ duration: 0.8 }}
             className="relative rounded-3xl p-8 sm:p-14 border border-amber-500/50 shadow-2xl shadow-purple-950/90 overflow-hidden min-h-[500px]"
           >
-            {/* 100% BRIGHT CRYSTAL CLEAR BACKGROUND PHOTO */}
+            {/* 100% BRIGHT CRYSTAL CLEAR BACKGROUND PHOTO - FULLY VISIBLE FACE */}
             <div className="absolute inset-0 z-0 pointer-events-none">
               <img
                 src="/images/personal_letter_bg.jpg"
@@ -26,7 +26,7 @@ export default function PersonalLetter() {
                 className="w-full h-full object-cover object-top opacity-100 scale-105 transition-transform duration-700 pointer-events-none select-none"
               />
               {/* Soft Gradient Overlay for text legibility at top and bottom only */}
-              <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-transparent to-black/80" />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80" />
             </div>
 
             {/* Top Decorative Postmark / Stamp Badge */}
@@ -36,7 +36,7 @@ export default function PersonalLetter() {
               </div>
             </div>
 
-            {/* CARD FOREGROUND CONTENT WITH GLASS PROTECTION */}
+            {/* CARD FOREGROUND CONTENT FLOATING DIRECTLY OVER BACKGROUND */}
             <div className="relative z-10">
               {/* Section Heading */}
               <div className="mb-8">
@@ -49,9 +49,9 @@ export default function PersonalLetter() {
                 </h2>
               </div>
 
-              {/* Letter Body Glass Container */}
-              <div className="bg-black/65 backdrop-blur-md border border-white/30 p-6 sm:p-10 rounded-2xl space-y-6 text-gray-100 text-lg sm:text-xl font-light leading-relaxed shadow-2xl">
-                <p className="font-handwriting text-3xl sm:text-4xl text-amber-200 font-semibold mb-6 drop-shadow-md">
+              {/* Letter Body Floating Directly Over Background */}
+              <div className="space-y-6 text-white text-lg sm:text-xl font-medium leading-relaxed drop-shadow-[0_4px_16px_rgba(0,0,0,1)]">
+                <p className="font-handwriting text-3xl sm:text-4xl text-amber-200 font-semibold mb-6 drop-shadow-[0_4px_12px_rgba(0,0,0,1)]">
                   {letter.salutation}
                 </p>
 
@@ -62,14 +62,14 @@ export default function PersonalLetter() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: idx * 0.15 }}
-                    className="text-gray-100/95 text-lg sm:text-xl drop-shadow-sm"
+                    className="text-white drop-shadow-[0_4px_16px_rgba(0,0,0,1)]"
                   >
                     {para}
                   </motion.p>
                 ))}
 
                 {/* Funny Postscript Highlight Box */}
-                <div className="my-8 p-6 rounded-2xl bg-black/70 border border-amber-400/50 backdrop-blur-md space-y-2 shadow-xl">
+                <div className="my-8 p-6 rounded-2xl bg-black/60 border border-amber-400/50 backdrop-blur-md space-y-2 shadow-xl">
                   {letter.funnyPostscript.map((line, fIdx) => (
                     <p
                       key={fIdx}
@@ -87,10 +87,10 @@ export default function PersonalLetter() {
 
                 <div className="pt-6 border-t border-white/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                   <div>
-                    <p className="text-sm text-gray-300 font-mono">
+                    <p className="text-sm text-gray-200 font-mono drop-shadow-[0_2px_8px_rgba(0,0,0,1)]">
                       {letter.signOff}
                     </p>
-                    <p className="font-handwriting text-3xl sm:text-4xl text-pink-300 font-bold mt-1 drop-shadow-sm">
+                    <p className="font-handwriting text-3xl sm:text-4xl text-pink-300 font-bold mt-1 drop-shadow-[0_4px_12px_rgba(0,0,0,1)]">
                       From a good friend ✨
                     </p>
                   </div>
