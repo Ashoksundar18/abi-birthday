@@ -1,23 +1,33 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, ArrowDown, Heart, PartyPopper, Stars } from 'lucide-react';
+import { Sparkles, ArrowDown, Heart, Stars } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { friendData } from '../config/friendData';
 import ThreeDCard from './ThreeDCard';
 
 export default function Hero({ onStarClick, starClickCount }) {
-  const scrollToIntro = () => {
+  const scrollToIntro = (e) => {
+    if (e) {
+      e.stopPropagation();
+    }
+
     // Fire celebratory birthday confetti when clicking Begin the Journey
-    confetti({
-      particleCount: 110,
-      spread: 90,
-      origin: { y: 0.65 },
-      colors: ['#e0aaff', '#ffb4a2', '#ffd166', '#f472b6', '#ffffff']
-    });
+    try {
+      confetti({
+        particleCount: 110,
+        spread: 90,
+        origin: { y: 0.65 },
+        colors: ['#e0aaff', '#ffb4a2', '#ffd166', '#f472b6', '#ffffff']
+      });
+    } catch (err) {
+      console.log('Confetti error:', err);
+    }
 
     const el = document.getElementById('oii-abi-slide');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.scrollTo({ top: window.innerHeight * 0.85, behavior: 'smooth' });
     }
   };
 
@@ -41,16 +51,17 @@ export default function Hero({ onStarClick, starClickCount }) {
               transition={{ duration: 0.8 }}
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-500/15 border border-purple-400/30 backdrop-blur-md mb-8 shadow-md"
             >
-              <Sparkles className="w-4 h-4 text-amber-300 animate-spin" style={{ animationDuration: '4s' }} />
-              <span className="text-xs uppercase tracking-widest font-semibold text-purple-200">
+              <Sparkles className="w-4 h-4 text-amber-300 animate-spin pointer-events-none" style={{ animationDuration: '4s' }} />
+              <span className="text-xs uppercase tracking-widest font-semibold text-purple-200 pointer-events-none">
                 {friendData.hero.badge}
               </span>
               
               {/* Subtle Secret Star for Easter Egg */}
               <button
+                type="button"
                 onClick={onStarClick}
                 title="A subtle star..."
-                className="ml-1 text-purple-300 hover:text-amber-300 hover:scale-125 transition-all active:scale-95 cursor-pointer text-sm"
+                className="ml-1 text-purple-300 hover:text-amber-300 hover:scale-125 transition-all active:scale-95 cursor-pointer text-sm relative z-30 pointer-events-auto"
               >
                 ✦
               </button>
@@ -84,7 +95,7 @@ export default function Hero({ onStarClick, starClickCount }) {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="mb-10 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs sm:text-sm text-purple-200 font-mono shadow-md backdrop-blur-md"
             >
-              <Heart className="w-3.5 h-3.5 text-pink-400 fill-pink-400/60 animate-pulse" />
+              <Heart className="w-3.5 h-3.5 text-pink-400 fill-pink-400/60 animate-pulse pointer-events-none" />
               <span>{friendData.hero.creatorCredit}</span>
             </motion.div>
 
@@ -93,24 +104,26 @@ export default function Hero({ onStarClick, starClickCount }) {
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-col items-center gap-4"
+              className="flex flex-col items-center gap-4 relative z-30 pointer-events-auto"
             >
               <button
+                type="button"
                 onClick={scrollToIntro}
-                className="group relative inline-flex items-center gap-3 px-9 py-4 sm:px-10 sm:py-4.5 rounded-full bg-gradient-to-r from-purple-600 via-pink-500 to-amber-400 text-white font-heading font-bold text-base sm:text-xl shadow-2xl shadow-pink-600/40 hover:shadow-pink-500/60 hover:scale-105 active:scale-98 transition-all duration-300 cursor-pointer overflow-hidden ring-2 ring-white/30"
+                className="group relative inline-flex items-center gap-3 px-9 py-4 sm:px-10 sm:py-4.5 rounded-full bg-gradient-to-r from-purple-600 via-pink-500 to-amber-400 text-white font-heading font-bold text-base sm:text-xl shadow-2xl shadow-pink-600/40 hover:shadow-pink-500/60 hover:scale-105 active:scale-98 transition-all duration-300 cursor-pointer overflow-hidden ring-2 ring-white/30 z-30 pointer-events-auto"
               >
-                <Stars className="w-5 h-5 text-amber-200 animate-pulse" />
-                <span className="relative z-10">{friendData.hero.ctaButton}</span>
-                <div className="absolute inset-0 bg-white/25 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                <Stars className="w-5 h-5 text-amber-200 animate-pulse pointer-events-none" />
+                <span className="relative z-10 pointer-events-none">{friendData.hero.ctaButton}</span>
+                <div className="absolute inset-0 bg-white/25 translate-y-full group-hover:translate-y-0 transition-transform duration-300 pointer-events-none" />
               </button>
 
               {/* Hint indicator */}
               <motion.div
                 animate={{ y: [0, 6, 0] }}
                 transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-                className="flex items-center gap-1.5 text-xs text-purple-300/70 font-mono uppercase tracking-widest mt-2"
+                onClick={scrollToIntro}
+                className="flex items-center gap-1.5 text-xs text-purple-300/80 hover:text-amber-200 font-mono uppercase tracking-widest mt-2 cursor-pointer transition-colors"
               >
-                <ArrowDown className="w-3.5 h-3.5 text-pink-400" />
+                <ArrowDown className="w-3.5 h-3.5 text-pink-400 pointer-events-none" />
                 <span>Click to reveal the surprise</span>
               </motion.div>
             </motion.div>

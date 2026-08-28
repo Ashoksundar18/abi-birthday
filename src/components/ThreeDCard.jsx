@@ -17,7 +17,6 @@ export default function ThreeDCard({ children, className = "", depth = 40 }) {
     const normX = mouseX / width - 0.5;
     const normY = mouseY / height - 0.5;
 
-    // Smooth responsive tilt angles
     const tiltX = -normY * 18;
     const tiltY = normX * 18;
 
@@ -55,20 +54,20 @@ export default function ThreeDCard({ children, className = "", depth = 40 }) {
       >
         {/* Glowing Neon Atmosphere Backlight */}
         <div
-          className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-pink-500/30 via-purple-500/30 to-amber-500/30 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+          className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-pink-500/30 via-purple-500/30 to-amber-500/30 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0"
         />
 
-        {/* 3D Content Container */}
+        {/* 3D Content Container with pointer-events enabled for children */}
         <div
-          className="relative z-10 w-full h-full"
+          className="relative z-10 w-full h-full pointer-events-auto"
           style={{ transform: `translateZ(${depth}px)`, transformStyle: 'preserve-3d' }}
         >
           {children}
         </div>
 
-        {/* 3D Specular Light Reflection Sheen */}
+        {/* 3D Specular Light Reflection Sheen (strictly pointer-events-none) */}
         <div
-          className="absolute inset-0 pointer-events-none rounded-3xl transition-opacity duration-300 z-30 overflow-hidden"
+          className="absolute inset-0 pointer-events-none rounded-3xl transition-opacity duration-300 z-30 overflow-hidden select-none"
           style={{
             background: `radial-gradient(circle at ${glare.x}% ${glare.y}%, rgba(255,255,255,${glare.opacity}) 0%, rgba(236,72,153,0.15) 30%, transparent 70%)`,
           }}
