@@ -7,10 +7,6 @@ import ThreeDCard from './ThreeDCard';
 
 export default function FinalSection() {
   const scrollToTop = (e) => {
-    if (e) {
-      e.stopPropagation();
-    }
-
     try {
       confetti({
         particleCount: 100,
@@ -20,6 +16,10 @@ export default function FinalSection() {
       });
     } catch (err) {
       console.log('Confetti error:', err);
+    }
+
+    if (e) {
+      e.preventDefault();
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -71,19 +71,23 @@ export default function FinalSection() {
               {friendData.closingSection.signature}
             </motion.p>
 
-            {/* Replay Button */}
-            <motion.button
-              type="button"
+            {/* Replay Button (Hybrid Anchor Link for 100% reliability) */}
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              onClick={scrollToTop}
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-purple-600 via-pink-500 to-amber-400 text-white font-heading font-semibold text-base sm:text-lg shadow-xl shadow-purple-900/40 hover:shadow-pink-500/50 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer border border-white/30 group relative z-30 pointer-events-auto"
+              className="relative z-30 pointer-events-auto"
             >
-              <RotateCcw className="w-5 h-5 text-amber-200 group-hover:-rotate-180 transition-transform duration-600 pointer-events-none" />
-              <span className="pointer-events-none">{friendData.closingSection.replayBtn}</span>
-            </motion.button>
+              <a
+                href="#"
+                onClick={scrollToTop}
+                className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-purple-600 via-pink-500 to-amber-400 text-white font-heading font-semibold text-base sm:text-lg shadow-xl shadow-purple-900/40 hover:shadow-pink-500/50 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer border border-white/30 group relative z-30 pointer-events-auto select-none"
+              >
+                <RotateCcw className="w-5 h-5 text-amber-200 group-hover:-rotate-180 transition-transform duration-600 pointer-events-none" />
+                <span className="pointer-events-none">{friendData.closingSection.replayBtn}</span>
+              </a>
+            </motion.div>
           </motion.div>
         </ThreeDCard>
 

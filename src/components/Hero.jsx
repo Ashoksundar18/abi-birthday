@@ -7,10 +7,6 @@ import ThreeDCard from './ThreeDCard';
 
 export default function Hero({ onStarClick, starClickCount }) {
   const scrollToIntro = (e) => {
-    if (e) {
-      e.stopPropagation();
-    }
-
     // Fire celebratory birthday confetti when clicking Begin the Journey
     try {
       confetti({
@@ -25,9 +21,8 @@ export default function Hero({ onStarClick, starClickCount }) {
 
     const el = document.getElementById('oii-abi-slide');
     if (el) {
+      e.preventDefault();
       el.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      window.scrollTo({ top: window.innerHeight * 0.85, behavior: 'smooth' });
     }
   };
 
@@ -99,33 +94,38 @@ export default function Hero({ onStarClick, starClickCount }) {
               <span>{friendData.hero.creatorCredit}</span>
             </motion.div>
 
-            {/* Call-to-action button */}
+            {/* Call-to-action button (Hybrid Anchor + JS Scroll for 100% reliability) */}
             <motion.div
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
               className="flex flex-col items-center gap-4 relative z-30 pointer-events-auto"
             >
-              <button
-                type="button"
+              <a
+                href="#oii-abi-slide"
                 onClick={scrollToIntro}
-                className="group relative inline-flex items-center gap-3 px-9 py-4 sm:px-10 sm:py-4.5 rounded-full bg-gradient-to-r from-purple-600 via-pink-500 to-amber-400 text-white font-heading font-bold text-base sm:text-xl shadow-2xl shadow-pink-600/40 hover:shadow-pink-500/60 hover:scale-105 active:scale-98 transition-all duration-300 cursor-pointer overflow-hidden ring-2 ring-white/30 z-30 pointer-events-auto"
+                className="group relative inline-flex items-center gap-3 px-9 py-4 sm:px-10 sm:py-4.5 rounded-full bg-gradient-to-r from-purple-600 via-pink-500 to-amber-400 text-white font-heading font-bold text-base sm:text-xl shadow-2xl shadow-pink-600/40 hover:shadow-pink-500/60 hover:scale-105 active:scale-98 transition-all duration-300 cursor-pointer overflow-hidden ring-2 ring-white/30 z-30 pointer-events-auto select-none"
               >
                 <Stars className="w-5 h-5 text-amber-200 animate-pulse pointer-events-none" />
                 <span className="relative z-10 pointer-events-none">{friendData.hero.ctaButton}</span>
                 <div className="absolute inset-0 bg-white/25 translate-y-full group-hover:translate-y-0 transition-transform duration-300 pointer-events-none" />
-              </button>
+              </a>
 
               {/* Hint indicator */}
-              <motion.div
-                animate={{ y: [0, 6, 0] }}
-                transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+              <a
+                href="#oii-abi-slide"
                 onClick={scrollToIntro}
-                className="flex items-center gap-1.5 text-xs text-purple-300/80 hover:text-amber-200 font-mono uppercase tracking-widest mt-2 cursor-pointer transition-colors"
+                className="flex items-center gap-1.5 text-xs text-purple-300/80 hover:text-amber-200 font-mono uppercase tracking-widest mt-2 cursor-pointer transition-colors z-30 pointer-events-auto"
               >
-                <ArrowDown className="w-3.5 h-3.5 text-pink-400 pointer-events-none" />
-                <span>Click to reveal the surprise</span>
-              </motion.div>
+                <motion.div
+                  animate={{ y: [0, 6, 0] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+                  className="flex items-center gap-1.5 pointer-events-none"
+                >
+                  <ArrowDown className="w-3.5 h-3.5 text-pink-400 pointer-events-none" />
+                  <span>Click to reveal the surprise</span>
+                </motion.div>
+              </a>
             </motion.div>
           </motion.div>
         </ThreeDCard>
