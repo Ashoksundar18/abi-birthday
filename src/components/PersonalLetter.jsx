@@ -16,22 +16,22 @@ export default function PersonalLetter() {
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.8 }}
-            className="relative rounded-3xl p-8 sm:p-14 border border-amber-500/40 shadow-2xl shadow-purple-950/80 overflow-hidden min-h-[500px]"
+            className="relative rounded-3xl p-8 sm:p-14 border border-amber-500/50 shadow-2xl shadow-purple-950/90 overflow-hidden min-h-[500px]"
           >
-            {/* CLEAR VIBRANT BACKGROUND PHOTO */}
+            {/* 100% BRIGHT CRYSTAL CLEAR BACKGROUND PHOTO */}
             <div className="absolute inset-0 z-0 pointer-events-none">
               <img
                 src="/images/personal_letter_bg.jpg"
                 alt="Abi White Saree Background Photo"
-                className="w-full h-full object-cover object-center opacity-80 scale-105 transition-transform duration-700 pointer-events-none select-none"
+                className="w-full h-full object-cover object-center opacity-100 scale-105 transition-transform duration-700 pointer-events-none select-none"
               />
-              {/* Soft Gradient Overlay for crisp text readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0b0a10] via-[#0b0a10]/55 to-[#0b0a10]/35" />
+              {/* Very minimal subtle vignette for text legibility */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-black/35" />
             </div>
 
             {/* Top Decorative Postmark / Stamp Badge */}
             <div className="absolute top-6 right-6 sm:top-8 sm:right-8 flex items-center gap-3 pointer-events-none opacity-90 z-10">
-              <div className="border border-dashed border-amber-400/60 px-3.5 py-1.5 rounded text-[10px] font-mono tracking-widest text-amber-300 uppercase rotate-2 bg-black/60 backdrop-blur-md shadow-md">
+              <div className="border border-dashed border-amber-400/70 px-3.5 py-1.5 rounded text-[10px] font-mono tracking-widest text-amber-300 uppercase rotate-2 bg-black/70 backdrop-blur-md shadow-md">
                 {letter.stampText}
               </div>
             </div>
@@ -40,17 +40,17 @@ export default function PersonalLetter() {
             <div className="relative z-10">
               {/* Section Heading */}
               <div className="mb-8">
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/60 border border-amber-500/40 text-amber-300 text-xs font-semibold uppercase tracking-widest mb-3 backdrop-blur-md shadow-md">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/70 border border-amber-500/50 text-amber-300 text-xs font-semibold uppercase tracking-widest mb-3 backdrop-blur-md shadow-md">
                   <Send className="w-3.5 h-3.5" />
                   <span>{letter.heading}</span>
                 </div>
-                <h2 className="font-heading text-3xl sm:text-4xl font-bold text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
+                <h2 className="font-heading text-3xl sm:text-4xl font-bold text-white drop-shadow-[0_4px_16px_rgba(0,0,0,1)]">
                   {letter.heading}
                 </h2>
               </div>
 
               {/* Letter Body Glass Container */}
-              <div className="bg-black/55 backdrop-blur-md border border-white/20 p-6 sm:p-10 rounded-2xl space-y-6 text-gray-100 text-lg sm:text-xl font-light leading-relaxed shadow-2xl">
+              <div className="bg-black/65 backdrop-blur-md border border-white/30 p-6 sm:p-10 rounded-2xl space-y-6 text-gray-100 text-lg sm:text-xl font-light leading-relaxed shadow-2xl">
                 <p className="font-handwriting text-3xl sm:text-4xl text-amber-200 font-semibold mb-6 drop-shadow-md">
                   {letter.salutation}
                 </p>
@@ -69,7 +69,7 @@ export default function PersonalLetter() {
                 ))}
 
                 {/* Funny Postscript Highlight Box */}
-                <div className="my-8 p-6 rounded-2xl bg-black/60 border border-amber-400/40 backdrop-blur-md space-y-2 shadow-xl">
+                <div className="my-8 p-6 rounded-2xl bg-black/70 border border-amber-400/50 backdrop-blur-md space-y-2 shadow-xl">
                   {letter.funnyPostscript.map((line, fIdx) => (
                     <p
                       key={fIdx}
@@ -95,7 +95,7 @@ export default function PersonalLetter() {
                     </p>
                   </div>
 
-                  <div className="flex items-center gap-2 text-amber-300 text-xs font-mono bg-black/60 px-3.5 py-1.5 rounded-full border border-amber-400/30 backdrop-blur-sm shadow-md">
+                  <div className="flex items-center gap-2 text-amber-300 text-xs font-mono bg-black/70 px-3.5 py-1.5 rounded-full border border-amber-400/40 backdrop-blur-sm shadow-md">
                     <Sparkles className="w-4 h-4 text-amber-300" />
                     <span>Made especially for you</span>
                   </div>
