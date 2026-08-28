@@ -21,10 +21,10 @@ export default function Intro() {
               <img
                 src="/images/happy_birthday_bg.jpg"
                 alt="Abi Blue Butterfly Background Photo"
-                className="w-full h-full object-cover object-center opacity-100 scale-105 transition-transform duration-700 pointer-events-none select-none"
+                className="w-full h-full object-cover object-top opacity-100 scale-105 transition-transform duration-700 pointer-events-none select-none"
               />
-              {/* Very minimal subtle vignette for text legibility */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-black/35" />
+              {/* Soft Gradient Overlay for text legibility at top and bottom only */}
+              <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-transparent to-black/75" />
             </div>
 
             <div className="relative z-10">
