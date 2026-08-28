@@ -20,7 +20,7 @@ export default function Intro() {
             <div className="absolute inset-0 z-0 pointer-events-none">
               <img
                 src="/images/happy_birthday_bg.jpg"
-                alt="Abirami Blue Butterfly Background Photo"
+                alt="Abi Blue Butterfly Background Photo"
                 className="w-full h-full object-cover object-center opacity-35 scale-105 transition-transform duration-700 pointer-events-none select-none"
               />
               {/* Soft Gradient Mask for crisp text contrast */}

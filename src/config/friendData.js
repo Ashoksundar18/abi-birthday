@@ -8,8 +8,8 @@
 
 export const friendData = {
   // Primary Personal Information
-  name: "Abirami",
-  fullName: "Abirami",
+  name: "Abi",
+  fullName: "Abi",
   nickname: "Abi",
   age: 20,
   creator: "Ashok Sundar",
@@ -26,7 +26,7 @@ export const friendData = {
   // Section 1 — Happy Birthday Introduction (2nd Section - Credit shown ONCE)
   intro: {
     tag: "HAPPY BIRTHDAY 🎂",
-    heading: "Happy Birthday, Abirami! 🎉",
+    heading: "Happy Birthday, Abi! 🎉",
     nicknameCallout: "oii Abi... ✨",
     creatorCredit: "Created & Hosted by Ashok Sundar",
     textParagraphs: [
@@ -47,35 +47,35 @@ export const friendData = {
         id: "photo1",
         src: "/images/photo1.jpg",
         caption: "That smile.",
-        alt: "Abirami lying down with butterfly effect",
+        alt: "Abi lying down with butterfly effect",
         featured: true
       },
       {
         id: "photo2",
         src: "/images/photo2.jpg",
         caption: "One of those moments.",
-        alt: "Abirami elegant saree pose",
+        alt: "Abi elegant saree pose",
         featured: false
       },
       {
         id: "photo3",
         src: "/images/photo3.jpg",
         caption: "Pure chaos 😂",
-        alt: "Abirami aesthetic frame",
+        alt: "Abi aesthetic frame",
         featured: false
       },
       {
         id: "photo4",
         src: "/images/photo4.jpg",
         caption: "Definitely one to remember.",
-        alt: "Abirami braid selfie",
+        alt: "Abi braid selfie",
         featured: false
       },
       {
         id: "photo5",
         src: "/images/photo5.jpg",
         caption: "Just being you.",
-        alt: "Abirami cutie saree portrait",
+        alt: "Abi cutie saree portrait",
         featured: false
       }
     ]
@@ -165,7 +165,7 @@ export const friendData = {
     heading: "One Last Thing...",
     stampText: "HAPPY 20TH BIRTHDAY",
     dateText: "A message from the heart",
-    salutation: "Dear Abirami,",
+    salutation: "Dear Abi,",
     paragraphs: [
       "I don't know what the future has planned, and I don't know where life will take us in your 20s.",
       "But I'm genuinely glad that our paths crossed.",
@@ -173,7 +173,7 @@ export const friendData = {
       "I hope you always remember how special you are to the people around you as you celebrate turning 20."
     ],
     funnyPostscript: [
-      "Happy 20th Birthday, Abirami! 🎂🎉",
+      "Happy 20th Birthday, Abi! 🎂🎉",
       "And yes... I spent way too much time making this website. 😂",
       "But you were worth it."
     ],
@@ -182,7 +182,7 @@ export const friendData = {
 
   // Final Closing Screen
   closingSection: {
-    heading: "Happy 20th Birthday, Abirami! Keep Smiling. Keep Being You. ✨",
+    heading: "Happy 20th Birthday, Abi! Keep Smiling. Keep Being You. ✨",
     signature: "— From someone who is really glad to know you.",
     replayBtn: "Replay the Memories ↻"
   },
@@ -191,7 +191,7 @@ export const friendData = {
   easterEgg: {
     clicksRequired: 5,
     secretMessageHeading: "20th Birthday Secret Unlocked! 😌✨",
-    secretMessageText: "Okay... you found the secret. 😌\nHappy 20th Birthday Abirami! I guess you really do explore everything.",
+    secretMessageText: "Okay... you found the secret. 😌\nHappy 20th Birthday Abi! I guess you really do explore everything.",
     subtext: "You unlocked the hidden sparkle of your 20th birthday scrapbook!"
   },
 
