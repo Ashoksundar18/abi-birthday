@@ -81,40 +81,120 @@ export const friendData = {
     ]
   },
 
-  // Section 3 — Animated 20th Birthday Quote Cards
+  // Section 3 — Animated Quotes & Words of Hope (Overcoming Darkness & Turning 20)
   quotesSection: {
-    tag: "20TH BIRTHDAY REMINDERS 🌟",
-    heading: "Things I Hope You Never Forget As You Turn 20",
+    tag: "WORDS OF STRENGTH & HOPE 🌅",
+    heading: "Reminders to Overcome Darkness & Keep Going",
+    subheading: "Gentle words of comfort, hope, and strength for the days when things feel heavy, and as you step into your 20s.",
+    categories: [
+      { id: "all", label: "All Words ✨" },
+      { id: "healing", label: "Overcoming Depression & Darkness 🌅" },
+      { id: "birthday", label: "20th Birthday Reflections 🎂" }
+    ],
     quotes: [
       {
         id: 1,
-        text: "Happy 20th Birthday! You are more amazing than you probably realize.",
-        icon: "Sparkles",
-        highlight: "Happy 20th Birthday"
+        text: "There is hope, even when your brain tells you there isn't. You are stronger than the dark days, and the sun will find you again.",
+        author: "John Green",
+        category: "healing",
+        icon: "Sun",
+        highlight: "There is hope"
       },
       {
         id: 2,
-        text: "Welcome to your 20s — never underestimate the difference your presence makes.",
-        icon: "HeartHandshake",
-        highlight: "Welcome to your 20s"
+        text: "Even the darkest night will end and the sun will rise. Your current pain is a chapter, not your whole story.",
+        author: "Victor Hugo",
+        category: "healing",
+        icon: "Sunrise",
+        highlight: "the sun will rise"
       },
       {
         id: 3,
-        text: "Entering a new decade, but some memories will always stay special because you were there.",
-        icon: "Camera",
-        highlight: "because you were there"
+        text: "You don't have to see the whole staircase, just take the first step. Take it one single breath at a time.",
+        author: "Martin Luther King Jr.",
+        category: "healing",
+        icon: "Compass",
+        highlight: "take the first step"
       },
       {
         id: 4,
-        text: "Keep that 20-year-old smile. It suits you perfectly.",
-        icon: "Smile",
-        highlight: "It suits you perfectly"
+        text: "Out of suffering have emerged the strongest souls; the most resilient characters are seared with scars.",
+        author: "Kahlil Gibran",
+        category: "healing",
+        icon: "Shield",
+        highlight: "strongest souls"
       },
       {
         id: 5,
-        text: "No matter where your 20s take you, some memories will always stay.",
+        text: "Healing is not linear. Be gentle with yourself on heavy days — simply waking up and trying again is proof of your courage.",
+        author: "Gentle Reminder",
+        category: "healing",
+        icon: "Heart",
+        highlight: "proof of your courage"
+      },
+      {
+        id: 6,
+        text: "Light can be found even in the darkest of times, if one only remembers to turn on the light.",
+        author: "Albus Dumbledore",
+        category: "healing",
+        icon: "Sparkles",
+        highlight: "turn on the light"
+      },
+      {
+        id: 7,
+        text: "You have survived 100% of your hardest days so far. Give yourself credit for how far you have walked through the fog.",
+        author: "Daily Reminder",
+        category: "healing",
+        icon: "Feather",
+        highlight: "survived 100% of your hardest days"
+      },
+      {
+        id: 8,
+        text: "Don't let the shadows of yesterday spoil the sunrise of tomorrow. You are allowed to reset and start fresh at any moment.",
+        author: "Words of Hope",
+        category: "healing",
+        icon: "Flame",
+        highlight: "start fresh"
+      },
+      {
+        id: 9,
+        text: "Happy 20th Birthday! You are more resilient, amazing, and loved than you probably realize.",
+        author: "Ashok Sundar",
+        category: "birthday",
+        icon: "Sparkles",
+        highlight: "more resilient"
+      },
+      {
+        id: 10,
+        text: "Welcome to your 20s — never underestimate the difference your presence makes to the world around you.",
+        author: "Ashok Sundar",
+        category: "birthday",
+        icon: "HeartHandshake",
+        highlight: "difference your presence makes"
+      },
+      {
+        id: 11,
+        text: "Entering a new decade... Remember that the darkest nights produce the brightest stars.",
+        author: "Ashok Sundar",
+        category: "birthday",
+        icon: "Camera",
+        highlight: "brightest stars"
+      },
+      {
+        id: 12,
+        text: "Keep that genuine smile. It has the power to bring warmth even into the gloomiest days.",
+        author: "Ashok Sundar",
+        category: "birthday",
+        icon: "Smile",
+        highlight: "power to bring warmth"
+      },
+      {
+        id: 13,
+        text: "No matter where your 20s take you, remember that you never have to carry the heavy days alone.",
+        author: "Ashok Sundar",
+        category: "birthday",
         icon: "Compass",
-        highlight: "will always stay"
+        highlight: "never have to carry the heavy days alone"
       }
     ]
   },
@@ -193,6 +273,19 @@ export const friendData = {
     secretMessageHeading: "20th Birthday Secret Unlocked! 😌✨",
     secretMessageText: "Okay... you found the secret. 😌\nHappy 20th Birthday Abi! I guess you really do explore everything.",
     subtext: "You unlocked the hidden sparkle of your 20th birthday scrapbook!"
+  },
+
+  // Section for sending a message to Ashok
+  feedbackSection: {
+    tag: "MESSAGE FOR ASHOK 💬",
+    heading: "Say something about Ashok...",
+    subheading: "Have a thought, a secret note, or something you want to say? Write it here and it will be sent directly to Ashok's inbox!",
+    targetEmail: "ashoksundar057@gmail.com",
+    placeholder: "Say something about Ashok...",
+    submitBtnText: "Send to Ashok 🚀",
+    sendingText: "Sending to Ashok...",
+    successHeading: "Message Sent to Ashok! ❤️",
+    successSubtext: "Your message has been sent directly to ashoksundar057@gmail.com. Ashok will read it!"
   },
 
   // Audio / Music Player Settings (Kanmani Anbodu - Gunaa Instrumental Theme)

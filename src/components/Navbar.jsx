@@ -40,7 +40,21 @@ export default function Navbar() {
           </span>
         </a>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
+          <a
+            href="#say-something"
+            onClick={(e) => {
+              e.preventDefault();
+              const el = document.getElementById('say-something');
+              if (el) {
+                el.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+            className="text-xs font-semibold tracking-wide text-purple-200 hover:text-white px-3.5 py-1.5 rounded-full bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-amber-500/20 hover:from-purple-500/30 hover:to-amber-500/30 border border-purple-400/30 transition-all shadow-sm flex items-center gap-1.5 cursor-pointer hover:scale-105 active:scale-95"
+          >
+            <span>Say to Ashok 💬</span>
+          </a>
+
           <span className="hidden sm:inline-block text-xs uppercase tracking-widest text-purple-300/80 font-medium px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20">
             Personal Scrapbook
           </span>

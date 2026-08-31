@@ -6,6 +6,7 @@ import Intro from './components/Intro';
 import QuotesSection from './components/QuotesSection';
 import Timeline from './components/Timeline';
 import PersonalLetter from './components/PersonalLetter';
+import SaySomethingAboutAshok from './components/SaySomethingAboutAshok';
 import FinalSection from './components/FinalSection';
 import AmbientBackground from './components/AmbientBackground';
 import EasterEggModal from './components/EasterEggModal';
@@ -45,6 +46,7 @@ export default function App() {
         <QuotesSection />
         <Timeline />
         <PersonalLetter />
+        <SaySomethingAboutAshok />
         <FinalSection />
       </main>
 

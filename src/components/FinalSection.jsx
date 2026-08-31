@@ -75,14 +75,28 @@ export default function FinalSection() {
           </motion.div>
         </ThreeDCard>
 
-        {/* Replay Button Placed Outside ThreeDCard for 100% Click & Scroll Reliability */}
+        {/* Replay & Write Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="mt-8 relative z-30 pointer-events-auto"
+          className="mt-8 flex flex-wrap items-center justify-center gap-4 relative z-30 pointer-events-auto"
         >
+          <a
+            href="#say-something"
+            onClick={(e) => {
+              e.preventDefault();
+              const el = document.getElementById('say-something');
+              if (el) {
+                el.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+            className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-purple-100 font-heading font-semibold text-base shadow-lg transition-all duration-300 cursor-pointer border border-white/20 hover:scale-105 active:scale-95"
+          >
+            <span>Write to Ashok 💬</span>
+          </a>
+
           <a
             href="#"
             onClick={scrollToTop}
