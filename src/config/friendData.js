@@ -285,7 +285,7 @@ export const friendData = {
     submitBtnText: "Send to Ashok 🚀",
     sendingText: "Sending to Ashok...",
     successHeading: "Message Sent to Ashok! ❤️",
-    successSubtext: "Your message has been sent directly to ashoksundar057@gmail.com. Ashok will read it!"
+    successSubtext: "Your message has been sent directly to Ashok. He will read it!"
   },
 
   // Audio / Music Player Settings (Kanmani Anbodu - Gunaa Instrumental Theme)

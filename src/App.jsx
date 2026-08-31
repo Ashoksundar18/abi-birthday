@@ -46,8 +46,8 @@ export default function App() {
         <QuotesSection />
         <Timeline />
         <PersonalLetter />
-        <SaySomethingAboutAshok />
         <FinalSection />
+        <SaySomethingAboutAshok />
       </main>
 
       {/* Easter Egg Confetti Modal */}

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Send, Heart, CheckCircle2, MessageSquare, Sparkles, Loader2, Mail } from 'lucide-react';
+import { Send, Heart, CheckCircle2, MessageSquare, Sparkles, Loader2 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { friendData } from '../config/friendData';
 import ThreeDCard from './ThreeDCard';
 
 export default function SaySomethingAboutAshok() {
-  const [senderName, setSenderName] = useState('Abi');
+  const [senderName, setSenderName] = useState('Perciyal');
   const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -30,9 +30,9 @@ export default function SaySomethingAboutAshok() {
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          name: senderName || 'Abi',
+          name: senderName || 'Perciyal',
           message: message.trim(),
-          _subject: `💬 New Message about Ashok from ${senderName || 'Abi'}!`,
+          _subject: `💬 New Message about Ashok from ${senderName || 'Perciyal'}!`,
           _template: 'table'
         })
       });
@@ -41,13 +41,12 @@ export default function SaySomethingAboutAshok() {
         setIsSubmitted(true);
         triggerConfetti();
       } else {
-        // Fallback to secondary form submit endpoint or success fallback
+        // Fallback
         setIsSubmitted(true);
         triggerConfetti();
       }
     } catch (err) {
       console.log('API FormSubmit fallback:', err);
-      // Fallback: still treat as submitted and open mailto as absolute backup if needed
       setIsSubmitted(true);
       triggerConfetti();
     } finally {
@@ -132,7 +131,7 @@ export default function SaySomethingAboutAshok() {
 
                   <div className="p-4 rounded-2xl bg-purple-950/40 border border-purple-500/20 w-full max-w-md mb-6 text-left">
                     <span className="text-[10px] uppercase font-mono tracking-widest text-purple-300/60 block mb-1">
-                      Your message to Ashok ({targetEmail}):
+                      Your message to Ashok:
                     </span>
                     <p className="text-sm font-serif italic text-purple-100/90 leading-snug">
                       "{message}"
@@ -165,7 +164,7 @@ export default function SaySomethingAboutAshok() {
                       type="text"
                       value={senderName}
                       onChange={(e) => setSenderName(e.target.value)}
-                      placeholder="Your Name (e.g. Abi)"
+                      placeholder="Your Name (e.g. Perciyal)"
                       className="w-full px-4 py-3 rounded-2xl bg-white/5 border border-white/10 text-white placeholder-purple-300/40 text-sm focus:outline-none focus:border-purple-400/60 focus:ring-2 focus:ring-purple-500/20 transition-all"
                     />
                   </div>
@@ -192,10 +191,10 @@ export default function SaySomethingAboutAshok() {
                     />
                   </div>
 
-                  {/* Recipient info indicator */}
+                  {/* Recipient info indicator (Gmail hidden) */}
                   <div className="flex items-center gap-2 text-xs text-purple-300/60 font-mono bg-purple-950/30 px-3.5 py-2 rounded-xl border border-purple-500/10">
-                    <Mail className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                    <span className="truncate">Will be delivered to: <strong className="text-amber-200">{targetEmail}</strong></span>
+                    <Sparkles className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                    <span>Will be delivered directly to Ashok's inbox ✨</span>
                   </div>
 
                   {/* Submit Button */}
